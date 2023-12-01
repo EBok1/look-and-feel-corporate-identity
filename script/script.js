@@ -32,3 +32,17 @@ modeSwitch.addEventListener("click" , () =>{
         
     }
 });
+
+
+function onButtonClick() {
+    alert('Button clicked!');
+}
+
+
+const likeButton = document.querySelector('#hartje');
+
+function likeBoek() {
+    likeButton.classList.toggle('like'); 
+}
+
+likeButton.addEventListener('click', likeBoek); 

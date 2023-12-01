@@ -71,7 +71,7 @@ body.dark{
 }
 
 /* ===== Sidebar ===== */
- .sidebar{
+.sidebar{
     position: fixed;
     top: 0;
     left: 0;
@@ -81,7 +81,21 @@ body.dark{
     background: var(--sidebar-color);
     transition: var(--tran-05);
     z-index: 100;  
+    animation: Menu2;
+    animation-duration: 1s;
 }
+
+
+@keyframes Menu2 {
+    0% {
+        opacity: 0%;
+    }
+
+    100% {
+        opacity: 100%;
+    }
+}
+
 /* .sidebar.close{
     width: 88px;
 } */
@@ -261,6 +275,7 @@ body.dark .sidebar li a:hover .text{
     flex-direction: column;
     justify-content: space-between;
     overflow-y: scroll;
+
 }
 .menu-bar::-webkit-scrollbar{
     display: none;
@@ -326,6 +341,7 @@ body.dark .mode .sun-moon i.moon{
 body.dark .switch::before{
     left: 20px;
 }
+
 
 .home{
     position: absolute;
@@ -435,34 +451,84 @@ body.dark .home .text{
     }
 }
 
-h2{
-    padding: 0.5em;
+h1{
+    padding-top: .5em;
+    font-size: 2.5em;
+    max-width: 20em;
 }
-p{
-    padding: 0.5em;
-    white-space: pre-line;
-    max-width: 15em;
+
+h2{
+    padding-bottom: 1.5em;
+    max-width: 20em;
+}
+
+h3{
+    padding: 1.7em 0 .5em 0;
+}
+
+h3.aanbevolen{
+    margin-left: 1em;
+}
+
+p.info{
+    max-width: 25em;
+    padding: .5em 0 .5em 0;
+    margin-top: 1.5em;
 }
 
 .grid {
     display: grid;
+    grid-template-columns: 1fr 2fr 1fr;
     grid-template-areas: 
-    "image info"
-    "rechtsonder onder";
+    "image info onder"
+    "rechtsonder reviews reviews";
+gap:1.5em;
+
+    padding:1.5em;
 }
+
 .adress{
-    margin-left: 1em;
-    padding: 0.5em;
+    margin-left: 1.5em;
+    padding: .5em 0 .5em 0;
 }
+
+.genre{
+    background-color: rgb(75, 170, 50);
+    border-radius: 20%;
+    color: black;
+    padding: .5em 0 .5em 0;
+    margin: .5em .5em .5em 0;
+    text-decoration: none;
+    font-size: 1.15em;
+}
+
+.genre:hover{
+    color: #eeeded;
+    text-decoration: underline;
+}
+
+a.genre{
+    padding: .5em;
+}
+
 .reserveren{
-    max-width: 6em;
-    max-height: 3em;
     background-color: var(--primary-color-light);
     border-radius: 20%;
     border: solid;
     color: black;
-    padding: 0.4em;
-    font-size: 1.17em;
+    padding: .5em 0 .5em 0;
+    margin: 0 .5em .5em 0;
+    font-size: 1.15em;
+    text-decoration: none;
+}
+
+.reserveren:hover{
+    background-color: #eeeded;
+    text-decoration: underline;
+}
+
+a.reserveren{
+    padding: .5em;
 }
 
 .beschikbaarheid{
@@ -471,75 +537,132 @@ p{
     border-radius: 5%;
     border: solid;
     margin-bottom: 1.5em;
+    padding-left: .5em;
     grid-area: rechtsonder;
 }
 
+p.beschikbaarheid{
+    padding: .5em;
+    white-space: pre-line;
+    max-width: 15em;
+}
+
 .recensies{
-    margin-top: 1em;
+    padding: .5em 0 .5em 0;
+    grid-area: reviews;
+    margin-left: 1.5em;
+    max-width: 25em;
+}
+
+a.librarything{
+    color: black;
+    padding: .5em 0 .5em 0;
+    margin: .5em .5em .5em 0;
+    text-decoration: none;
+}
+
+a.librarything:hover{
+    background-color: #eeeded;
+    text-decoration: underline;
 }
 
 #books{
     max-width: 20em;
-    padding: 0.5em;
+    width: 100%;
     place-items: center;
-    margin-left: 1em;
+    margin-left: 1.5em;
     grid-area: image;
 }
 
 .book-s{
     grid-area: info;
-}
-
-a{
-    gap:1em;
-    padding-left: 1em;
+    margin-left: 1.5em;
+    max-width: 25em;
 }
 
 .row3{
     grid-area: onder;
     gap:1em;
-    padding-left: 1em;
-}
-
-.genre{
-    background-color: rgb(75, 170, 50);
-    border-radius: 20%;
-    color: black;
-    padding: 0.2em;
-    margin: 0.5em;
-    text-decoration: none;
-}
-
-.genre:hover{
-    color: rgb(180, 200, 0);
-}
-
-.info{
+    padding-left: 1.5em;
     max-width: 20em;
-    margin-right: 2em;
+    justify-self: left; 
 }
 
-button1{
+p.aanbevolen{
+    color: #FF0000;
+    margin-left: 1.5em;
+}
+
+button{
     background-color: var(--primary-color-light);
     padding: 1em;
     margin: 1em;
-    position: fixed;
-        top: 2em;
-        right: 0.2em;
+    position: relative;
+        bottom: 90em;
+        left: 80em;
     border-radius: 20%;
     border: solid;
     max-height: 3em;
     
 }
 
-button1:hover{
-    background-color: rgb(230, 0, 130);
+button:hover{
+    
+    box-shadow: 0 0.5em 0.5em -0.4em rgb(230, 0, 130) ;
+   transform: translateY(-0.25em)
+}
+
+button.like {
+    background-color: deeppink;
+}
+
+button.like i {
+    color:white;
+}
+
+li:hover{
+    transform: translateY(-1em)
 }
 
 @media(width < 37.5em){
-    button1{
+    button{
         top: 5em;
         right: 0.1em;
     border-radius: 20%;
     }
+}
+
+
+
+main ul.book-list{
+    list-style: none;
+    display: flex;
+    overflow-x: scroll;
+    gap:1em;
+    scroll-snap-type:x mandatory;
+    overscroll-behavior-x: contain;
+    padding-left: 1em;
+    
+}
+
+
+.book-list li{
+    background-color: var(--primary-color-light);
+}
+
+main ul.book-list ul {
+    list-style: none;
+    
+}
+
+#book-img{
+    max-width: 10em;
+    padding: 1em;
+}
+
+
+.recomended {
+    width:100%;
+    overflow:auto;
+    margin-left: 1.5em;
 }
